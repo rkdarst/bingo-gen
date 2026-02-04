@@ -264,8 +264,9 @@ def create_bingo_pdf(out_pdf: PdfPages,
             # draw thin inner rect border for cell (so overall border remains bold)
             ax.add_patch(Rectangle((x, y), cell_w, cell_h,
                                    transform=ax.transAxes, facecolor='none', edgecolor='black', linewidth=0.6))
-            pad = 0.01
-            _fit_text_in_bbox(ax, cell_text, (x + pad, y + pad), (cell_w - 2 * pad, cell_h - 2 * pad),
+            vpad = 0.1
+            hpad = 0.01
+            _fit_text_in_bbox(ax, cell_text, (x + hpad, y + vpad), (cell_w - 2 * hpad, cell_h - 2 * vpad),
                               max_fontsize=24, min_fontsize=6, fontname=FONT, line_spacing=1.05)
 
     # Save to PDF
@@ -284,13 +285,11 @@ if __name__ == "__main__":
 
     import csv
     data = list(csv.reader(open(args.input)))[1:]  # skip header
-    print(data)
     COL1 = list(filter(None, list(zip(*data))[0]))
     COL2 = list(filter(None, list(zip(*data))[1]))
     COL3 = list(filter(None, list(zip(*data))[2]))
     COL4 = list(filter(None, list(zip(*data))[3]))
     COL5 = list(filter(None, list(zip(*data))[4]))
-
 
     with PdfPages(args.output) as pdf:
         for _ in range(args.n):
