@@ -279,8 +279,8 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('input')
-    parser.add_argument('n', type=int)
     parser.add_argument('output', nargs='?', default=OUTPUT_FILENAME)
+    parser.add_argument('--n', type=int)
     args = parser.parse_args()
 
     import csv
