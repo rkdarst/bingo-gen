@@ -1,11 +1,19 @@
 # Bingo board generator
 
-A generator that takes a csv with five columns (with a header that is
-excluded) and makes randomized bingo boards out of it.
+A generator that takes a csv makes randomized bingo boards out of it.
+
+Features:
+* Input csv file with five columns (ignores first header).
+* Each column gets randomized into the respective bingo board column.
+* Can generate any number of boards into a single PDF file.
+
+
+## Usage
 
 ```console
 $ python3 bingo.py input.csv --n=5 [output.csv]
 ```
+
 
 ## License
 
