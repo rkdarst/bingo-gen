@@ -1,6 +1,9 @@
 # Bingo board generator
 
 A generator that takes a csv makes randomized bingo boards out of it.
+This was made based on an icebreaker game using bingo boards: you had
+to talk to people to check off the various squares.  This automates
+producing the boards with squares interesting to your group of people.
 
 Features:
 * Input csv file with five columns (ignores first header).
